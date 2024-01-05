@@ -1,4 +1,4 @@
-package quizapp.core;
+package core;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,16 +42,36 @@ public class Quiz {
 
     public boolean verificarResposta(int indice, String respostaUsuario) {
         if (indice >= 0 && indice < respostas.size()) {
-            return respostas.get(perguntas.get(indice)).equalsIgnoreCase(respostaUsuario);
+            
+            String respostaCorreta = respostas.get(perguntas.get(indice));
+            respostaCorreta = respostaCorreta.trim();
+    
+            return respostaCorreta.equals(respostaUsuario.trim());
+        }
+        return false;
+    } 
+    
+    public boolean validarResposta(int indice, String respostaUsuario) {
+        if (indice >= 0 && indice < perguntas.size()) {
+            String[] opcoesValidas = {"a", "b", "c"}; 
+
+            respostaUsuario = respostaUsuario.toLowerCase();
+
+            for (String opcao : opcoesValidas) {
+                if (respostaUsuario.equals(opcao) || respostaUsuario.equals(opcao.toUpperCase())) {
+                    return true;
+                }
+            }
         }
         return false;
     }
-
+        
     public int size() {
         return perguntas.size();
     }
 
     public String obterResposta(int i) {
-        return respostas.get(perguntas.get(i));
+        return respostas.get(perguntas.get(i)).trim();
     }
+    
 }
