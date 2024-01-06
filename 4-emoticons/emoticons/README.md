@@ -1,18 +1,25 @@
-## Getting Started
+SISTEMA DE RECONHECIMENTO DE SENTIMENTOS COM EMOTICONS
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+O Sistema de Reconhecimento de Sentimentos com Emoticons é uma aplicação Java que oferece uma abordagem simples para determinar o sentimento expresso em mensagens com base em emoticons. Desenvolvido por [Seu Nome], este sistema visa proporcionar uma experiência intuitiva aos usuários.
 
-## Folder Structure
+Como Utilizar:
+1. Clone o repositório: https://github.com/francieledalarosa/FisrtChallenge_Compasso.git
+2. Navegue até o diretório do projeto: cd SistemaReconhecimentoSentimentos.
+3. Compile os arquivos Java: javac *.java
+4. Execute a aplicação: App
 
-The workspace contains two folders by default, where:
+Instruções de Uso:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- Ao iniciar a aplicação, o usuário é saudado e solicitado a compartilhar como foi seu dia.
+- O sistema utiliza a classe 'Emoticons' para analisar a mensagem e determinar o sentimento expresso.
+- Com base na contagem de emoticons felizes (" :-) ") e tristes ( ":-( "), o sistema classifica o sentimento como "Divertido", "Chateado" ou "Neutro".
+- O resultado é exibido ao usuário.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Estrutura do Projeto:
+- App: Classe principal que lida com a interação do usuário, utilizando a classe 'Emoticons' para determinar o sentimento.
+- Emoticons: Classe responsável por contar emoticons felizes e tristes na mensagem, utilizando o método privado 'contarEmoticons'.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Autor - Franciele Dalarosa
 
-## Dependency Management
+Licença Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).

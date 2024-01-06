@@ -1,42 +1,35 @@
-QUIZ DO PROGRAMADOR
+SISTEMA DE AUTENTICAÇÃO
 
-O QuizApp é uma aplicação simples de quiz em Java, onde os jogadores podem responder a perguntas e ganhar pontos com base em suas respostas.
+O Sistema de Autenticação é uma aplicação simples em Java que oferece funcionalidades básicas de autenticação, permitindo que usuários realizem login e cadastro. 
 
-Pré-requisitos Certifique-se de ter o Java instalado em sua máquina.
+Pré-requisitos
+Certifique-se de ter o Java instalado em sua máquina.
 
-Como executar
+Como Executar
 
-1. Clone o repositório: https://github.com/seu-usuario/QuizApp.git
+1. Clone o repositório: https://github.com/francieledalarosa/FisrtChallenge_Compasso.git
 
-2. Navegue até o diretório do projeto: cd QuizApp
+2. Navegue até o diretório do projeto: cd SistemaAutenticacao
 
 3. Compile os arquivos Java: javac *.java
 
-4. Execute a aplicação: QuizApp
+4. Execute a aplicação: LoginApp
 
 Instruções de Uso
-- Ao iniciar o aplicativo, você será solicitado a inserir o número de jogadores.
-- Insira o nome de cada jogador quando solicitado.
-- Responda às perguntas do quiz no tempo determinado.
-- Após todas as perguntas, a pontuação final de cada jogador será exibida, junto com o vencedor.
+- Ao iniciar o aplicativo, você será solicitado a indicar se já possui cadastro.
+- Responda com "S" para login ou "N" para cadastrar um novo usuário.
+- Para facilidade de teste já possue senha e usuários/cadastrados ("usuario1", "senha1").
+- Siga as instruções fornecidas pelo sistema para realizar o login ou cadastro.
 
 Estrutura do Projeto
 
-- core: Contém a lógica principal do quiz. Possui uma classe 'Quiz' com atributos: perguntas, alternativas e respostas; O size contabiliza o tamanho de lista das perguntas. Ele relaciona as perguntas com List<string> e as alternativas e respostas utilizam Map <string>. O Método get é utilizado na função obterPergunta() conforme o índice da pergunta, que se relaciona com verificarResposta e validarResposta.
+- core: Contém a lógica principal do sistema de autenticação. Possui a classe 'AutenticacaoService' contendo como atributos 'usuarios' e 'senhas', sendo responsável pela autenticação e cadastro de usuários. Utiliza arrays para armazenar informações de usuários e senhas.
 
-Nas funções são usados trim(), toLowerCase() e equals() para tratamento de espaços vazios desnecessários, converter letras maiúsculas em minúsculas e comparar as strings. Caso o usuário deixe ou coloque algum espaço a mais e digite a alternativa com letra maiúscula.
+E possui dois métodos: autenticarUsuario(String usuarioDigitado, String senhaDigitada) e cadastrarUsuario(String novoUsuario, String novaSenha) que verifica se os dados inseridos pelo usuário correspondem à lista de usuários/senhas cadastrados ou recebe um novo nome e um novo usuário, após adiciona-os na lista de usuários.
 
-Na versão anterior também havia tratamento caso a resposta estivesse fora das alternativas existentes com loop while para repetir a pergunta e permitir que o usuário escrevesse corretamente a opção desejada. No entanto, com o método de temporizador adicionado ao jogo, foi removido para que o competidor não dobre seu tempo sobre a questão tendo vantagens na disputa.
+- ui: Contém a interface do usuário e a lógica de interação. A classe 'AutenticacaoUI' oferece métodos para realizar o login onde, caso o mesmo erre, possui um número máximo de tentativas definidos pelo sistema e a opção de escolha se o usuário deseja realizar nova tentativa caso erre a anterior; cadastrar um novo usuário e exibir mensagens de saudação.
 
-- ui: Contém a interface do usuário e a lógica de interação. Possui uma classe QuizUI, que tem como atributos um objeto scanner para entradas do usuário e instancia a classe Quiz da core, respostasEscolhidas, pontuação e nomeUsuario. Um construtor (QuizUI(String nomeUsuario)).
-
-O iniciarQuiz() throws ExecutionException, IOException: Inicia o quiz exibindo uma mensagem de boas-vindas. Itera sobre cada pergunta do quiz, exibindo-a e espera a resposta utilizando o método responderComTemporizador(int indice) para controlar o tempo de resposta.
-
-Este, por sua vez, define um tempo limite para cada pergunta (20 segundos). Utiliza um ExecutorService e um Future para executar uma tarefa em uma thread separada que representa o temporizador. Usa tratamento de exceção, caso o jogador não responda dentro do prazo esperado, a resposta será considerada errada e não soma pontos, uma mensagem é exibida na tela, o mesmo caso o competidor digite ou de entrada em uma resposta não válida. Caso contrário, o método retorna um valor booleano indicando se a resposta foi correta.
-
-Método getRespostasEscolhidas(): Retorna a lista de respostas escolhidas pelo usuário. Método getNomeUsuario(): Retorna o nome do usuário. Método getPontuacao(): Retorna a pontuação do usuário no quiz.
-
--main: possui a classe principal QuizApp. A função main solicita que o usuário digite o número de jogadores, utiliza try/catch para tratamento caso a entrada seja inválida. Utiliza lista para exibir os resultados finais com a pontuação e retorna o vencedor.
+- main: Classe principal 'LoginApp' que inicia o aplicativo. Solicita se o usuário já possui cadastro e redireciona para o login ou cadastro conforme a resposta.
 
 Autor - Franciele Dalarosa
 

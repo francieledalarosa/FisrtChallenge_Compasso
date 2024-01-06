@@ -1,18 +1,43 @@
-## Getting Started
+ Sistema de Controle de Estoque
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este é um sistema simples de controle de estoque em Java, desenvolvido como parte de um desafio.
 
-## Folder Structure
+Requisitos
 
-The workspace contains two folders by default, where:
+- Java 8 ou superior
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Como Executar
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Certifique-se de ter o JDK instalado no seu sistema.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+1. Clone o repositório: https://github.com/francieledalarosa/FisrtChallenge_Compasso.git
+    
 
-## Dependency Management
+2. Navegue até o diretório do projeto: cd seu-repositorio/loja
+  
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+3. Compile o código: javac -d bin src/loja/core/*.java src/loja/ui/*.java
+ 
+
+4. Execute o programa: java -cp bin loja.ui.MenuEstoque
+    
+
+Funcionalidades
+
+(OBS: estas eram as funcionalidades pretendidas, na primeira versão ele continha as funcionalidades exigidas, tentei melhora-lo de última hora infelizmente não vai dar tempo de terminar, porem acho melhor entregar mostrando que tentei ir alem que apenas o básico, agradeço a compreensão).
+
+- Ver produtos: Exibe a lista de produtos cadastrados no estoque.
+- Cadastrar novo produto: Permite cadastrar um novo produto no estoque. (ele não está cadastrando corretamente, logo não está fazendo outras operações)
+- Vender: Registra uma venda, reduzindo a quantidade em estoque do produto.
+- Comprar: Registra uma compra, aumentando a quantidade em estoque do produto.
+- Alterar preço: Atualiza o preço de um produto existente.
+- Alterar quantidade em estoque: Modifica a quantidade em estoque de um produto existente.
+
+ Estrutura do Projeto
+
+- core/: Contém as classes essenciais relacionadas ao estoque e produtos.
+- ui/: Contém a interface do usuário, incluindo o menu principal.
+
+Autor - Franciele Dalarosa
+
+Licença Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
