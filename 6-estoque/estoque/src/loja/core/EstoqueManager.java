@@ -50,5 +50,9 @@ public class EstoqueManager {
     }
 
     public void cadastrarNovoProduto(String nome, int codigo, double preco, int quantidadeEmEstoque) {
+        Produto novoProduto = new Produto(nome, codigo, preco, quantidadeEmEstoque);
+        produtos.add(novoProduto);
+        System.out.println("Produto cadastrado com sucesso: " + novoProduto);
+
     }
 }
